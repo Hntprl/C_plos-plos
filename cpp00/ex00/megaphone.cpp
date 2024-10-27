@@ -1,5 +1,4 @@
 
-#include <string.h>
 #include <iostream>
 
 int main (int ac, char **argv)
