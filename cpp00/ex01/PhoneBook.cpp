@@ -44,6 +44,37 @@ void    fix_print(std::string str)
 	std::cout << '|';
 }
 
+void	print_contact(Contact contacts)
+{
+	std::cout << "First Name: " << contacts.f_name << '\n';
+	std::cout << "Last Name: " << contacts.l_name << '\n';
+	std::cout << "NickName: " << contacts.n_name << '\n';
+	std::cout << "Phone Number: " << contacts.phone_nbr << '\n';
+	std::cout << "Darckest Secret: " << contacts.secret << '\n';
+}
+
+void	contact_prompt(Contact *contacts)
+{
+	int	i = 0;
+	std::string rd;
+	int	index = 0;
+
+	std::cout << "============================================\n";
+	std::cout << "Enter an index: ";
+	std::cin >> rd;
+	std::cout << "============================================\n";
+	index = atoi(rd.c_str());
+	while (contacts[i].index)
+	{
+		if (contacts[i].index == index)
+		{
+			print_contact(contacts[i]);
+			return;
+		}
+		i ++;
+	}
+}
+
 void print_contact_info(Contact *contacts)
 {
 	int i = 0;
@@ -64,6 +95,7 @@ void print_contact_info(Contact *contacts)
 		std::cout << '\n';
 		i ++;
 	}
+	contact_prompt(contacts);
 }
 
 void add_contact(Contact *contacts)
